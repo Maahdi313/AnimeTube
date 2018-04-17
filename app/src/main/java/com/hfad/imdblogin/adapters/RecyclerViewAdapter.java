@@ -79,8 +79,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             tv_name = itemView.findViewById(R.id.animeName);
             tv_category = itemView.findViewById(R.id.animeCategory);
-            tv_studio = itemView.findViewById(R.id.animeRating);
-            tv_rating = itemView.findViewById(R.id.studio);
+            tv_studio = itemView.findViewById(R.id.studio);
+            tv_rating = itemView.findViewById(R.id.animeRating);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
         }
     }
