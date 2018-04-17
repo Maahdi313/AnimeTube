@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Volley & Glide -->
+    <color name="colorPrimary">#00aff0</color>
+    <color name="colorPrimaryDark">#097fb2</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- MoviesApp Delaroy -->
+    <color name="viewBg">#f1f5f8</color>
+    <color name="movie_title">#4c4c4c</color>
+    <color name="white">#FFF</color>
+</resources>

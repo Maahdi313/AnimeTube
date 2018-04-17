@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "880281786846",
+    "firebase_url": "https://imdblogin-ba465.firebaseio.com",
+    "project_id": "imdblogin-ba465",
+    "storage_bucket": "imdblogin-ba465.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880281786846:android:880b2576aa4a55be",
+        "android_client_info": {
+          "package_name": "com.hfad.imdblogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880281786846-3bmqik9dl21iodrag0vojcrsi6mtdsk7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hfad.imdblogin",
+            "certificate_hash": "fead734a79c7733c1fb4101fb3ea6efc1de50c78"
+          }
+        },
+        {
+          "client_id": "880281786846-7pfil0e94n7u0m9ctt6djr8ubick6p2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCytYrN4b92m5kxGF9XXqayMfaSMyY1dK8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880281786846-7pfil0e94n7u0m9ctt6djr8ubick6p2k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
