@@ -1,15 +1,12 @@
 package com.hfad.imdblogin.activities;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
@@ -81,7 +78,6 @@ public class ActivityHomepage extends AppCompatActivity implements View.OnClickL
 
             for (int i = 0 ; i<response.length();i++) {
 
-                //Toast.makeText(getApplicationContext(),String.valueOf(i),Toast.LENGTH_SHORT).show();
 
                 try {
 
@@ -95,7 +91,7 @@ public class ActivityHomepage extends AppCompatActivity implements View.OnClickL
                     anime.setCategorie(jsonObject.getString("categorie"));
                     anime.setStudio(jsonObject.getString("studio"));
                     anime.setImage_url(jsonObject.getString("img"));
-                    //Toast.makeText(MainActivity.this,anime.toString(),Toast.LENGTH_SHORT).show();
+
                     animeList.add(anime);
                 }
                 catch (JSONException e) {
