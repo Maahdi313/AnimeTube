@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.hfad.imdblogin.R;
 import com.hfad.imdblogin.model.Anime;
-import com.hfad.imdblogin.R;
 
 import java.util.List;
 

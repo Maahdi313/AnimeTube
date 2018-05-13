@@ -1,39 +1,27 @@
 package com.hfad.imdblogin.activities;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.Intent;
-import android.support.annotation.NonNull;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.View;
 import android.widget.Toast;
-
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.firebase.auth.FirebaseAuth;
 import com.hfad.imdblogin.R;
 import com.hfad.imdblogin.adapters.RecyclerViewAdapter;
 import com.hfad.imdblogin.model.Anime;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityHomepage extends AppCompatActivity implements View.OnClickListener {
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+public class ActivityHomepage extends AppCompatActivity{
+
     private String URL_JSON = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json";
     private JsonArrayRequest ArrayRequest ;
     private RequestQueue requestQueue ;
@@ -41,34 +29,15 @@ public class ActivityHomepage extends AppCompatActivity implements View.OnClickL
     private RecyclerView recyclerView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        findViewById(R.id.buttonLogout).setOnClickListener(this);
-        mAuth = FirebaseAuth.getInstance();
 
         recyclerView = findViewById(R.id.recycler_view);
         jsoncall();
 
-        //if the user is not logged, that means current user returns null
-        if(mAuth.getCurrentUser()==null){
-            //closing this activity
-            finish();
-            //starting main activity
-            startActivity(new Intent(ActivityHomepage.this, ActivityLoginPage.class));
-        }
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() ==null){
-                    startActivity(new Intent(ActivityHomepage.this, ActivityLoginPage.class));
-                }
-            }
-        };
 
     }
     public void jsoncall() {
@@ -129,22 +98,4 @@ public class ActivityHomepage extends AppCompatActivity implements View.OnClickL
 
     }
 
-
-    public void signOut(){
-        FirebaseAuth.getInstance().signOut();
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.buttonLogout:
-                signOut();
-                break;
-        }
-    }
 }

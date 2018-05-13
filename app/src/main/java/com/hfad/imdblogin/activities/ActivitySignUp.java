@@ -66,19 +66,7 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
         progressDialog.show();
 
 
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
 
-                    Toast.makeText(getApplicationContext(), "User Registration Successful", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
-                }
-                progressDialog.dismiss();
-            }
-        });
     }
 
     @Override

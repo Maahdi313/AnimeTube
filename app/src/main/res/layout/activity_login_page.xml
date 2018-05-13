@@ -38,45 +38,6 @@
         android:hint="@string/password_text"
         android:inputType="textPassword" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardViewGoogle"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-
-
-        android:layout_alignEnd="@+id/create_account_button"
-        android:layout_alignRight="@+id/create_account_button"
-        android:layout_alignTop="@+id/facebook_sign_in_button"
-        app:cardBackgroundColor="#FFF"
-        app:cardCornerRadius="9dp">
-
-        <RelativeLayout
-            android:id="@+id/googleLogin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/googleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toEndOf="@+id/googleIcon"
-                android:layout_toRightOf="@+id/googleIcon"
-                android:text="@string/google_text"
-                android:textColor="#000"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/googleIcon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:drawableLeft="@mipmap/ic_launcher_google_icon" />
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
 
 
     <android.support.v7.widget.CardView
@@ -149,31 +110,7 @@
         app:srcCompat="@drawable/movieapplogo" />
 
 
-    <Button
-        android:id="@+id/facebook_sign_in_button"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_above="@+id/textViewSignup"
-        android:layout_alignLeft="@+id/editPasswordText"
-        android:layout_alignStart="@+id/editPasswordText"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/buttonshape"
-        android:drawableLeft="@mipmap/ic_launcher_facebook_icon"
-        android:text="Sign in"
-        android:textColor="#FFF"
-        android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/create_account_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cardViewGoogle"
-        android:background="@drawable/moviebuttonshape"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@drawable/ic_action_name_account"
-        android:layout_marginBottom="15dp"
-        android:textSize="15sp"
-        android:text="Create an movietube account" />
 
 
 
