@@ -23,7 +23,7 @@ public class ActivityLoginPage extends AppCompatActivity implements GoogleApiCli
         setContentView(R.layout.activity_login_page);
         //See the auth statu
 
-        findViewById(R.id.create_account_button).setOnClickListener(this);
+
         findViewById(R.id.cardViewLogin).setOnClickListener(this);
 
         findViewById(R.id.textViewSignup).setOnClickListener(this);
@@ -42,9 +42,7 @@ public class ActivityLoginPage extends AppCompatActivity implements GoogleApiCli
             case R.id.textViewSignup:
                 startActivity(new Intent(ActivityLoginPage.this,ActivitySignUp.class));
                 break;
-            case R.id.create_account_button:
-                startActivity(new Intent(ActivityLoginPage.this, CreateAccountActivity.class));
-                break;
+
 
         }
 

@@ -10,7 +10,7 @@
     <string name="password_register">Password</string>
     <string name="email_register">Email</string>
     <string name="phone_text">Phone</string>
-    <string name="email_login">SIGN IN WITH EMAIL OR MOVIETUBE</string>
+    <string name="email_login">SIGN IN</string>
     <string name="todo_text">TODO</string>
     <string name="facebook_app_id">205054263413664</string>
     <string name="fb_login_protocol_scheme">fb205054263413664</string>
