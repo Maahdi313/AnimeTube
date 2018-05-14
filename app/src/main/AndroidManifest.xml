@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ActivityLoginPage">
-
-
-        </activity>
+        <activity android:name=".activities.ActivityLoginPage"></activity>
         <activity android:name=".activities.ActivitySignUp" />
 
         <meta-data
@@ -35,7 +32,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ActivityHomepage" >
+        <activity android:name=".activities.ActivityHomepage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +40,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.CreateAccountActivity" />
+        <activity android:name=".activities.AnimeActivity"></activity>
     </application>
 
 </manifest>
