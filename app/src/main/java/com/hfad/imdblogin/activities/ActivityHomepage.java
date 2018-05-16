@@ -1,8 +1,6 @@
 package com.hfad.imdblogin.activities;
 
 
-import android.support.v4.app.FragmentManager;
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -21,10 +19,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.hfad.imdblogin.R;
 import com.hfad.imdblogin.adapters.RecyclerViewAdapter;
-import com.hfad.imdblogin.fragment.FragmentCreateAccount;
-import com.hfad.imdblogin.fragment.FragmentCreateAccount;
 import com.hfad.imdblogin.model.Anime;
-import com.hfad.imdblogin.model.AppDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityHomepage extends AppCompatActivity /*implements View.OnClickListener*/ {
+public class ActivityHomepage extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String URL_JSON = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json";
@@ -42,9 +37,6 @@ public class ActivityHomepage extends AppCompatActivity /*implements View.OnClic
     private List<Anime> animeList = new ArrayList<>();
     private RecyclerView recyclerView;
 
-    public static FragmentManager fragmentManager;
-    public static AppDatabase appDatabase;
-
 
 //test
     @Override
@@ -52,18 +44,6 @@ public class ActivityHomepage extends AppCompatActivity /*implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        fragmentManager = getSupportFragmentManager();
-        appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"userdb").allowMainThreadQueries().build();
-
-        if(findViewById(R.id.fragment_container)!=null)
-        {
-            if(savedInstanceState!=null)
-            {
-                return;
-            }
-            fragmentManager.beginTransaction().add(R.id.fragment_container, new FragmentCreateAccount()).commit();
-        }
-/*
         findViewById(R.id.buttonLogout).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
 
@@ -161,6 +141,6 @@ public class ActivityHomepage extends AppCompatActivity /*implements View.OnClic
             case R.id.buttonLogout:
                 signOut();
                 break;
-        }*/
+        }
     }
 }
