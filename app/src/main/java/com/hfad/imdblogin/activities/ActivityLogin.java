@@ -115,11 +115,4 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void emptyInputEditText()
-    {
-        textInputEditTextUsername.setText(null);
-        textInputEditTextPassword.setText(null);
-
-    }
-
 }
