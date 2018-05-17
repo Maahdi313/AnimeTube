@@ -25,6 +25,7 @@
         <activity
             android:name=".activities.ActivityUsers"
             android:screenOrientation="portrait" />
+        <activity android:name=".Notification.NotificationActivity"/>
         <activity android:name=".activities.ActivityDetailedAnimeDesc"></activity>
     </application>
 

@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.hfad.imdblogin.Notification.NotificationActivity;
 import com.hfad.imdblogin.R;
 import com.hfad.imdblogin.adapters.RecyclerViewAdapter;
 import com.hfad.imdblogin.model.Anime;
@@ -58,6 +59,11 @@ public class ActivityHomepage extends AppCompatActivity{
             case R.id.item_account:
                 Intent loginIntent = new Intent(ActivityHomepage.this, ActivityLogin.class);
                 startActivity(loginIntent);
+                break;
+            case R.id.item_notification:
+                Intent intentNotification = new Intent(ActivityHomepage.this, NotificationActivity.class);
+                startActivity(intentNotification);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
