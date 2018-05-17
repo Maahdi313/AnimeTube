@@ -19,10 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ActivityLogin" />
-        <activity android:name=".activities.ActivityRegister"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activities.ActivityUsers"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.ActivityRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ActivityUsers"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.ActivityDetailedAnimeDesc"></activity>
     </application>
 
 </manifest>
