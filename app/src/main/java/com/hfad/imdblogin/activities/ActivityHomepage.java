@@ -63,49 +63,51 @@ public class ActivityHomepage extends AppCompatActivity{
     }
 
     public void jsoncall() {
-    ArrayRequest = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
-        @Override
-        public void onResponse(JSONArray response) {
+        ArrayRequest = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
 
-            JSONObject jsonObject = null;
+                JSONObject jsonObject = null;
 
 
-            for (int i = 0 ; i<response.length();i++) {
+                for (int i = 0 ; i<response.length();i++) {
 
-                try {
 
-                    jsonObject = response.getJSONObject(i);
-                    Anime anime = new Anime();
+                    try {
 
-                    anime.setName(jsonObject.getString("name"));
-                    anime.setDescription(jsonObject.getString("description"));
-                    anime.setRating(jsonObject.getString("Rating"));
-                    anime.setNb_episode(jsonObject.getInt("episode"));
-                    anime.setCategorie(jsonObject.getString("categorie"));
-                    anime.setStudio(jsonObject.getString("studio"));
-                    anime.setImage_url(jsonObject.getString("img"));
-                    animeList.add(anime);
+                        jsonObject = response.getJSONObject(i);
+                        Anime anime = new Anime();
+
+                        anime.setName(jsonObject.getString("name"));
+                        anime.setDescription(jsonObject.getString("description"));
+                        anime.setRating(jsonObject.getString("Rating"));
+                        anime.setNb_episode(jsonObject.getInt("episode"));
+                        anime.setCategorie(jsonObject.getString("categorie"));
+                        anime.setStudio(jsonObject.getString("studio"));
+                        anime.setImage_url(jsonObject.getString("img"));
+
+                        animeList.add(anime);
+                    }
+                    catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-                catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
+
+                Toast.makeText(ActivityHomepage.this,"Size of Liste "+String.valueOf(animeList.size()),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityHomepage.this, animeList.get(1).toString(),Toast.LENGTH_SHORT).show();
+
+                setRecyclerViewAdapter(animeList);
             }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
 
 
-            Toast.makeText(ActivityHomepage.this,"Size of Liste "+String.valueOf(animeList.size()),Toast.LENGTH_SHORT).show();
-            Toast.makeText(ActivityHomepage.this, animeList.get(1).toString(),Toast.LENGTH_SHORT).show();
-
-            setRecyclerViewAdapter(animeList);
-        }
-    }, new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-
-        }
-    });
-
-
-    requestQueue = Volley.newRequestQueue(ActivityHomepage.this);
+        requestQueue = Volley.newRequestQueue(ActivityHomepage.this);
         requestQueue.add(ArrayRequest);
     }
 
@@ -116,4 +118,5 @@ public class ActivityHomepage extends AppCompatActivity{
         recyclerView.setAdapter(myAdapter);
 
     }
+
 }
