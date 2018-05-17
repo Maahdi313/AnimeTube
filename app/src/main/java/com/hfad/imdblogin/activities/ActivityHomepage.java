@@ -1,10 +1,14 @@
 package com.hfad.imdblogin.activities;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -34,12 +38,30 @@ public class ActivityHomepage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-
         recyclerView = findViewById(R.id.recycler_view);
         jsoncall();
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.item_account:
+                Intent loginIntent = new Intent(ActivityHomepage.this, ActivityLogin.class);
+                startActivity(loginIntent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void jsoncall() {
     ArrayRequest = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
         @Override
@@ -49,8 +71,6 @@ public class ActivityHomepage extends AppCompatActivity{
 
 
             for (int i = 0 ; i<response.length();i++) {
-
-                //Toast.makeText(getApplicationContext(),String.valueOf(i),Toast.LENGTH_SHORT).show();
 
                 try {
 
@@ -64,7 +84,6 @@ public class ActivityHomepage extends AppCompatActivity{
                     anime.setCategorie(jsonObject.getString("categorie"));
                     anime.setStudio(jsonObject.getString("studio"));
                     anime.setImage_url(jsonObject.getString("img"));
-                    //Toast.makeText(MainActivity.this,anime.toString(),Toast.LENGTH_SHORT).show();
                     animeList.add(anime);
                 }
                 catch (JSONException e) {
@@ -97,5 +116,4 @@ public class ActivityHomepage extends AppCompatActivity{
         recyclerView.setAdapter(myAdapter);
 
     }
-
 }
