@@ -100,8 +100,8 @@ public class ActivityHomepage extends AppCompatActivity{
                 }
 
 
-                Toast.makeText(ActivityHomepage.this,"Size of Liste "+String.valueOf(animeList.size()),Toast.LENGTH_SHORT).show();
-                Toast.makeText(ActivityHomepage.this, animeList.get(1).toString(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ActivityHomepage.this,"Size of Liste "+String.valueOf(animeList.size()),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ActivityHomepage.this, animeList.get(1).toString(),Toast.LENGTH_SHORT).show();
 
                 setRecyclerViewAdapter(animeList);
             }

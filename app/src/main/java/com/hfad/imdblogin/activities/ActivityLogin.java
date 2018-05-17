@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.hfad.imdblogin.R;
 import com.hfad.imdblogin.helper.InputValidation;
@@ -104,9 +105,10 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         if(databaseHelper.checkUser(textInputEditTextUsername.getText().toString().trim(),
                 textInputEditTextPassword.getText().toString().trim()))
         {
-            Intent accountsIntent = new Intent(activity, ActivityUsers.class);
-            accountsIntent.putExtra("USERNAME", textInputEditTextUsername.getText().toString().trim());
-            emptyInputEditText();
+            Intent accountsIntent = new Intent(activity, ActivityHomepage.class);
+            //accountsIntent.putExtra("USERNAME", textInputEditTextUsername.getText().toString().trim());
+            //emptyInputEditText();
+            Toast.makeText(ActivityLogin.this, "Successfully signed in!!!!", Toast.LENGTH_SHORT).show();
             startActivity(accountsIntent);
         } else {
             Snackbar.make(nestedScrollView, getString(R.string.error_wrong_username_password), Snackbar.LENGTH_LONG).show();
