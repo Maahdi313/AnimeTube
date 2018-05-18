@@ -1,4 +1,4 @@
-package com.hfad.imdblogin.Notification;
+package com.hfad.imdblogin.notification;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -19,7 +19,9 @@ public class ActivityDetailedAnimeDesc extends AppCompatActivity {
 
         //hide the default actionbar
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Recieve data
 

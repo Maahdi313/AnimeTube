@@ -45,6 +45,8 @@ public class ActivityRegister extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initViews();
         initListeners();
         initObjects();

@@ -39,7 +39,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initViews();
         initListeners();
