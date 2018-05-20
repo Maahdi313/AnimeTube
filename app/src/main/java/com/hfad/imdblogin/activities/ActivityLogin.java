@@ -39,7 +39,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initViews();
         initListeners();
@@ -113,6 +114,37 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         } else {
             Snackbar.make(nestedScrollView, getString(R.string.error_wrong_username_password), Snackbar.LENGTH_LONG).show();
         }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 }

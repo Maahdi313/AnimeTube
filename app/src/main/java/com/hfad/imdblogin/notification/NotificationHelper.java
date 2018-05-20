@@ -1,4 +1,4 @@
-package com.hfad.imdblogin.Notification;
+package com.hfad.imdblogin.notification;
 
 import android.annotation.TargetApi;
 import android.app.Notification;

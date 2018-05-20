@@ -19,7 +19,9 @@ public class ActivityDetailedAnimeDesc extends AppCompatActivity {
 
         //hide the default actionbar
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Recieve data
 
@@ -66,4 +68,35 @@ public class ActivityDetailedAnimeDesc extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
 }
