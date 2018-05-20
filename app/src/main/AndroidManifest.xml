@@ -21,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ActivityLogin" android:parentActivityName=".activities.ActivityHomepage" />
         <activity
             android:name=".activities.ActivityRegister" android:parentActivityName=".activities.ActivityLogin"
             android:screenOrientation="portrait" />
