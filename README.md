@@ -3,7 +3,7 @@
 This repository consist of an app created in Android Studio. 
 The app is created as a school project which will be handled in at 20/05/2018.
 
-This App is created by IT students from University of Southern Denmark:
+This App is created by Softwaretechnology students from University of Southern Denmark:
 Thuong Nha Buu Huynh
 Farhad Ba-Ali
 
